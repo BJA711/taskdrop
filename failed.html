@@ -30,7 +30,7 @@ nav a {
 footer {
   position:fixed; bottom:0; width:100%;
   text-align:center; padding:10px;
-  background:#ddd;
+  background:red;
 }
 </style>
 </head>
@@ -50,7 +50,7 @@ footer {
   <div class="big" id="msg">Signed up</div>
 </div>
 
-<footer>© 2026 TaskDrop</footer>
+<footer>© check URL</footer>
 
 <script>
 // optional: read name from URL
@@ -60,7 +60,7 @@ let msg = params.get("msg");
 if (msg) {
   let name = decodeURIComponent(msg.replace("its-april-1-", ""));
   document.getElementById("msg").innerText =
-    "Signed up, " + name + " 😄";
+    "You are Signed up, " + name + " 😄";
 }
 </script>
 
