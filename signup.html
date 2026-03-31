@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskDrop - Signup</title>
+
+<style>
+body { margin:0; font-family:system-ui; background:#eef2ff; }
+
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px; background:#4a63e7; color:white;
+}
+
+nav a {
+  margin:0 6px; color:white; text-decoration:none; font-size:14px;
+}
+
+.container {
+  display:flex; justify-content:center; align-items:center;
+  height:70vh;
+}
+
+.box {
+  width:90%; max-width:250px;
+  background:white; padding:20px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+input {
+  width:95%; padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button {
+  width:100%; padding:10px;
+  background:#4a63e7; color:white;
+  border:none; border-radius:8px;
+}
+
+/* loader */
+.loader {
+  display:none;
+  margin:12px auto;
+  border:4px solid #eee;
+  border-top:4px solid #4a63e7;
+  border-radius:50%;
+  width:30px; height:30px;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform:rotate(360deg); }
+}
+
+footer {
+  position:fixed; bottom:0; width:100%;
+  text-align:center; padding:10px;
+  background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <b>TaskDrop</b>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Tasks</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="box">
+    <h3>Create Account</h3>
+
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <button onclick="submitForm()">Signup</button>
+
+    <div class="loader" id="loader"></div>
+  </div>
+</div>
+
+<footer>© 2026 TaskDrop</footer>
+
+<script>
+let attempts = 0;
+
+function submitForm() {
+  let loader = document.getElementById("loader");
+
+  loader.style.display = "block";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+
+    if (attempts < 2) {
+      alert("Password not strong ❌");
+      attempts++;
+    } else {
+      alert("exam alle mone poyi revision cheyy");
+
+      // update URL
+      history.replaceState(null, "", "#its-april-1");
+    }
+
+  }, 1200);
+}
+</script>
+
+</body>
+</html>
