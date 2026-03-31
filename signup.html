@@ -79,9 +79,9 @@ footer {
   <div class="box">
     <h3>Create Account</h3>
 
-    <input placeholder="Name">
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
+    <input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
 
     <button onclick="submitForm()">Signup</button>
 
@@ -96,7 +96,8 @@ let attempts = 0;
 
 function submitForm() {
   let loader = document.getElementById("loader");
-  let name = document.getElementById("name").value || "user";
+  let nameInput = document.getElementById("name");
+let name = nameInput ? nameInput.value : "user";
 
   loader.style.display = "block";
 
