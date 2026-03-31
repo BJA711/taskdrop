@@ -41,7 +41,6 @@ button {
   border:none; border-radius:8px;
 }
 
-/* loader */
 .loader {
   display:none;
   margin:12px auto;
@@ -80,8 +79,8 @@ footer {
     <h3>Create Account</h3>
 
     <input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
 
     <button onclick="submitForm()">Signup</button>
 
@@ -97,21 +96,21 @@ let attempts = 0;
 function submitForm() {
   let loader = document.getElementById("loader");
   let nameInput = document.getElementById("name");
-let name = nameInput ? nameInput.value : "user";
+
+  let name = nameInput ? nameInput.value : "user";
 
   loader.style.display = "block";
 
   setTimeout(() => {
     loader.style.display = "none";
 
-    if (attempts < 2) {
-      alert("Password not strong ");
+    if (attempts < 3) {
+      alert("Password not strong");
       attempts++;
     } else {
       let encoded = encodeURIComponent(name);
       window.location.href = "failed.html?msg=its-april-1-" + encoded;
     }
-
   }, 1200);
 }
 </script>
