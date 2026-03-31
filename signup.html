@@ -96,6 +96,7 @@ let attempts = 0;
 
 function submitForm() {
   let loader = document.getElementById("loader");
+  let name = document.getElementById("name").value || "user";
 
   loader.style.display = "block";
 
@@ -103,13 +104,11 @@ function submitForm() {
     loader.style.display = "none";
 
     if (attempts < 2) {
-      alert("Password not strong ❌");
+      alert("Password not strong ");
       attempts++;
     } else {
-      alert("exam alle mone poyi revision cheyy");
-
-      // update URL
-      history.replaceState(null, "", "#its-april-1");
+      let encoded = encodeURIComponent(name);
+      window.location.href = "failed.html?msg=its-april-1-" + encoded;
     }
 
   }, 1200);
