@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskDrop</title>
+
+<style>
+body { margin:0; font-family:system-ui; background:#eef2ff; }
+
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px; background:#4a63e7; color:white;
+}
+
+nav a {
+  margin:0 6px; color:white; text-decoration:none; font-size:14px;
+}
+
+.container {
+  display:flex; justify-content:center; align-items:center;
+  height:70vh; text-align:center;
+}
+
+.big {
+  font-size:32px;
+  font-weight:bold;
+  color:#333;
+}
+
+footer {
+  position:fixed; bottom:0; width:100%;
+  text-align:center; padding:10px;
+  background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <b>TaskDrop</b>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Tasks</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="big" id="msg">Signed up</div>
+</div>
+
+<footer>© 2026 TaskDrop</footer>
+
+<script>
+// optional: read name from URL
+let params = new URLSearchParams(window.location.search);
+let msg = params.get("msg");
+
+if (msg) {
+  let name = decodeURIComponent(msg.replace("its-april-1-", ""));
+  document.getElementById("msg").innerText =
+    "Signed up, " + name + " 😄";
+}
+</script>
+
+</body>
+</html>
